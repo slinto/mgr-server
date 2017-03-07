@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    include head
+  body
+    h1 WHOOOOOOP! #{status} error
+
+    if (CURRENT_ENV == 'DEVELOPMENT') 
+      p DEV_ONLY: #{message}
+        
+    a(href='/') <strong>Back</strong> 'to homepage!
