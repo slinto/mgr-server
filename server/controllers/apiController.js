@@ -9,7 +9,7 @@ const router = express.Router();
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'runeeemail@gmail.com',
+    user: 'leafprojectslinto@gmail.com',
     pass: 'Senica313',
   },
 });
@@ -32,7 +32,7 @@ router.post('/send-email', (req, res) => {
 
   const mailOptions = {
     from: email,
-    to: 'runeeemail@gmail.com',
+    to: 'tomco3131@gmail.com',
     subject,
     text,
     html: `<p>${text}</p>`,
