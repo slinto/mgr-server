@@ -25,7 +25,6 @@ router.get('/', (req, res) => {
  * POST: Email send
  */
 router.post('/send-email', (req, res) => {
-  console.log(req);
   const email = req.body.email;
   const subject = req.body.subject;
   const text = req.body.text;
