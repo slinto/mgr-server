@@ -1,17 +1,16 @@
 /**
  * Main app start point.
  */
-var express = require('express');
+const express = require('express');
 
-var app = express();
+const app = express();
 
-var config = require('./config');
-var error = require('./lib/error_handler');
+const config = require('./config');
+const error = require('./lib/error_handler');
 
 config.appSetup(app);
-//config.dbConnect();
 error.setup(app);
 
-app.listen(config.port, function() {
+app.listen(config.port, () => {
   console.log('Listening on port %d', config.port);
 });

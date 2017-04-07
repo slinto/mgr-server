@@ -1,12 +1,10 @@
 /**
  * App router.
  */
-var setup = function(app) {
-  var staticController = require('./controllers/staticController');
-  var apiController = require('./controllers/apiController');
+const staticController = require('./controllers/staticController');
+const apiController = require('./controllers/apiController');
 
+module.exports.setup = (app) => {
   app.use('/', staticController);
   app.use('/api', apiController);
 };
-
-module.exports.setup = setup;
