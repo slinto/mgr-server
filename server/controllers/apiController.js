@@ -43,6 +43,8 @@ router.post('/send-email', (req, res) => {
       return console.log(error);
     }
     console.log('Message %s sent: %s', info.messageId, info.response);
+
+    res.json({ status: 'ok' });
   });
 });
 
