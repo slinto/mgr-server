@@ -29,6 +29,8 @@ router.post('/send-email', (req, res) => {
   const subject = req.body.subject;
   const text = req.body.text;
 
+  console.log(req.body);
+
   const mailOptions = {
     from: email,
     to: 'tomco3131@gmail.com',
@@ -39,7 +41,7 @@ router.post('/send-email', (req, res) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return console.log(error);
+      console.log(error);
     }
     console.log('Message %s sent: %s', info.messageId, info.response);
 
