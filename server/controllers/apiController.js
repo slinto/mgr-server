@@ -29,7 +29,7 @@ router.post('/send-email', (req, res) => {
   const subject = req.body.subject;
   const text = req.body.text;
 
-  console.log(req.body);
+  console.log(req);
 
   const mailOptions = {
     from: email,
