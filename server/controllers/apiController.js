@@ -26,8 +26,9 @@ router.get('/', (req, res) => {
  */
 router.post('/send-email', (req, res) => {
   const email = req.body.email;
+  const userID = req.body.id;
   const subject = req.body.subject;
-  const text = req.body.text;
+  const message = req.body.message;
 
   console.log(req.body);
 
@@ -35,8 +36,8 @@ router.post('/send-email', (req, res) => {
     from: email,
     to: 'tomco3131@gmail.com',
     subject,
-    text,
-    html: `<p>${text}</p>`,
+    text: `${email} / ${userID}: ${message}`,
+    html: `<p> USER: ${email} / ${userID}<br> Message: ${message}</p>`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
