@@ -30,21 +30,19 @@ router.post('/send-email', (req, res) => {
   const subject = req.body.subject;
   const message = req.body.message;
 
-  console.log(req.body);
-
   const mailOptions = {
     from: email,
     to: 'tomco3131@gmail.com',
     subject,
     text: `${email} / ${userID}: ${message}`,
-    html: `<p> USER: ${email} / ${userID}<br> Message: ${message}</p>`,
+    html: `<p>User: ${email} (${userID}) <br>Message: ${message}</p>`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
     }
-    console.log('Message %s sent: %s', info.messageId, info.response);
+    console.log('EMAIL SEND OK.', info.messageId);
 
     res.json({ status: 'ok' });
   });
